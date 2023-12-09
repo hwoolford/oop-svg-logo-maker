@@ -1,5 +1,6 @@
 const { writeFile } = require('fs').promises;
 const inquirer = require("inquirer");
+const shapes = require("./lib/shapes");
 
 
 const questions = () => {
@@ -7,7 +8,7 @@ const questions = () => {
         {
             type: "input",
             message:"Enter up to 3 text characters.",
-            name: "initials",
+            name: "text",
         },
         {
             type: "input",
