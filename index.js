@@ -33,23 +33,31 @@ const questions = () => {
     ]);
 };
 
-function createLogo(data) {
-    if (data.shapes === "Circle") {
-return new Circle(data.text, data.textColor, data.shapeColor);
-} else if (data.shapes === "Triangle") {
-       return new Triangle(data.text, data.textColor, data.shapeColor);
-    } else if (data.shapes === "Square") {
-        return new Square(data.text, data.textColor, data.shapeColor);
+
+
+function createLogo(shapes, text, textColor, shapeColor) {
+    if (shapes === "Circle") {
+      const circle = new Circle(text, textColor, shapeColor);
+      return circle.render();
+    } else if (shapes === "Triangle") {
+      const triangle = new Triangle(text, textColor, shapeColor);
+      return triangle.render();
+    } else if (shapes === "Square") {
+      const square = new Square(text, textColor, shapeColor);
+      return square.render();
     } else {
-        return ""
+      return "";
     }
-}
-
-const init = () => {
+  }
+  
+  const init = () => {
     questions()
-    .then((answers) => writeFile('./examples/logo.svg', createLogo(answers)))
-    .then(() => console.log("Generated logo.svg"))
-    .catch((err) => console.log(err));
-}
-
-init();
+      .then((answers) => {
+        const { shapes, text, textColor, shapeColor } = answers;
+        return writeFile('./examples/logo.svg', createLogo(shapes, text, textColor, shapeColor));
+      })
+      .then(() => console.log("Generated logo.svg"))
+      .catch((err) => console.log(err));
+  }
+  
+  init();
