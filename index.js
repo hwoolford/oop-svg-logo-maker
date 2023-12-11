@@ -1,6 +1,6 @@
 const { writeFile } = require('fs').promises;
 const inquirer = require("inquirer");
-const {Shapes, Circle, Triangle, Square} = require("./lib/shapes.js");
+const {Circle, Triangle, Square} = require("./lib/shapes.js");
 
 
 const questions = () => {
