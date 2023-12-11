@@ -1,6 +1,6 @@
 const { writeFile } = require('fs').promises;
 const inquirer = require("inquirer");
-const shapes = require("./lib/shapes");
+const {Circle, Triangle, Square} = require("./lib/shapes");
 
 
 const questions = () => {
@@ -18,11 +18,11 @@ const questions = () => {
         {
             type: "list",
             message:"Please choose a shape.",
-            name: "shape",
+            name: "shapes",
             choices: [
-                "circle",
-                "triangle",
-                "square",
+                "Circle",
+                "Triangle",
+                "Square",
             ],
         },
         {
@@ -32,3 +32,24 @@ const questions = () => {
         },
     ]);
 };
+
+function createLogo(data) {
+    if (data.shapes === "Circle") {
+return new Circle(data.text, data.textColor, data.shapeColor);
+} else if (data.shapes === "Triangle") {
+       return new Triangle(data.text, data.textColor, data.shapeColor);
+    } else if (data.shapes === "Square") {
+        return new Square(data.text, data.textColor, data.shapeColor);
+    } else {
+        return ""
+    }
+}
+
+const init = () => {
+    questions()
+    .then((answers) => writeFile('./examples/logo.svg', createLogo(answers)))
+    .then(() => console.log("Generated logo.svg"))
+    .catch((err) => console.log(err));
+}
+
+init();
