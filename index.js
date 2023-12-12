@@ -1,14 +1,16 @@
 const { writeFile } = require('fs').promises;
 const inquirer = require("inquirer");
 const {Circle, Triangle, Square} = require("./lib/shapes.js");
-
+const MaxLengthInputPrompt = require('inquirer-maxlength-input-prompt')
+inquirer.registerPrompt('maxlength-input', MaxLengthInputPrompt)
 
 const questions = () => {
     return inquirer.prompt([
         {
-            type: "input",
+            type: "maxlength-input",
             message:"Enter up to 3 text characters.",
             name: "text",
+            maxLength: 3
         },
         {
             type: "input",
