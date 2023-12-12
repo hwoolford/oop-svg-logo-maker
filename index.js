@@ -5,6 +5,7 @@ const {Circle, Triangle, Square} = require("./lib/shapes.js");
 const MaxLengthInputPrompt = require('inquirer-maxlength-input-prompt')
 inquirer.registerPrompt('maxlength-input', MaxLengthInputPrompt)
 
+// Prompts for users to enter logo information
 const questions = () => {
     return inquirer.prompt([
         {
@@ -37,7 +38,7 @@ const questions = () => {
 };
 
 
-
+// Function that creates the logo
 function createLogo(shapes, text, textColor, shapeColor) {
     if (shapes === "Circle") {
       const circle = new Circle(text, textColor, shapeColor);
@@ -53,6 +54,7 @@ function createLogo(shapes, text, textColor, shapeColor) {
     }
   }
   
+  // Function to initialize application
   const init = () => {
     questions()
       .then((answers) => {
