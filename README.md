@@ -25,7 +25,7 @@ The images below shows example SVG logos that were created using the SVG Logo Ma
 
 ## Links
 - [GitHub Repository](https://github.com/hwoolford/oop-svg-logo-maker) 
-- [Walkthrough Video Demonstration]()
+- [Walkthrough Video Demonstration](https://drive.google.com/file/d/1EN81rEKrUeGDG52KrmZu0edPrdpIha2K/view?usp=sharing)
 
 ## Acknowledgements
 I would like to acknowledge the assistance provided by Xpert, an AI Learning Assistant, in providing guidance and support throughout the development of this project. Xpert's insights and suggestions were invaluable in helping me overcome challenges and improve the quality of my work. (Acknowledgement written by Xpert)
