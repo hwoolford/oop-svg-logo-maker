@@ -4,7 +4,7 @@
 This project is a command-line application built using JavaScript, JSON, node.js, Inquirer, and FS. Jest was used for conducting tests. Users enter the text (up to 3 characters) and the text color. Then they choose the shape (circle, triangle, or square) and color of their logo. The logo is generated and saved as an SVG file. 
 
 ## Usage
-In order to use this application, you must have node.js installed on your machine. You will also need a package.json with the required dependencies. Before installing dependencies, run "npm init" to create a package.json file. Also before installing npm dependencies, make sure you have a .gitignore file that includes node_modules/ and .DS_Store/. After running npm init, then run "npm i inquirer@8.2.4" to install inquirer. Inquirer is what allows you to execute the prompts. If you want to run tests, make sure you have Jest installed.
+In order to use this application, you must have node.js installed on your machine. You will also need a package.json with the required dependencies. Before installing dependencies, run "npm init" to create a package.json file. Also before installing npm dependencies, make sure you have a .gitignore file that includes node_modules/ and .DS_Store/. After running npm init, then run "npm i to install dependencies. Inquirer is what allows you to execute the prompts. If you want to run tests, make sure you have Jest installed.
 
 To initialize the SVG Logo Maker, type "node index.js" in the command line. Answer the prompts and then view your new logo.svg. 
 
